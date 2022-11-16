@@ -1,0 +1,86 @@
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "debian-openssl-1.1.x"]
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id             String         @id @default(uuid())
+  full_name      String         @db.VarChar(100)
+  email          String         @unique
+  phone          String         @db.VarChar(15)
+  password       String         @db.VarChar(100)
+  account_status String         @default("unlocked")
+  last_modified  DateTime       @updatedAt
+  created_at     DateTime       @default(now())
+  user_role      String         @default("customer")
+  otp            String?
+  Cart           Cart[]
+  refreshTokens  RefreshToken[]
+}
+
+model RefreshToken {
+  id          String   @id @default(uuid())
+  hashedToken String
+  revoked     Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  user_id     String?
+  predecessor String
+  user        User?    @relation(fields: [user_id], references: [id], onDelete: Cascade)
+
+  @@index([user_id], map: "RefreshToken_user_id_fkey")
+}
+
+model AccessLogs {
+  id            String   @id @default(uuid())
+  created_at    DateTime @default(now())
+  last_modified DateTime @updatedAt
+  message       String   @db.VarChar(6000)
+  level         String   @db.VarChar(30)
+  meta          String?  @db.VarChar(100)
+  timestamp     DateTime @db.DateTime(0)
+}
+
+model Product {
+  id            String   @id @default(uuid())
+  name          String   @db.VarChar(100)
+  price         Decimal  @default(99999999.99) @db.Decimal(15, 2)
+  description   String   @db.VarChar(2000)
+  stock         Int      @db.UnsignedSmallInt
+  image_url     String   @db.VarChar(2000)
+  product_code  String   @db.VarChar(20)
+  last_modified DateTime @updatedAt
+  created_at    DateTime @default(now())
+  public_id     String?  @db.VarChar(300)
+  category_name String
+  category      Category @relation(fields: [category_name], references: [name])
+  Cart          Cart[]
+
+  @@index([category_name], map: "Product_category_name_fkey")
+}
+
+model Category {
+  id      String    @id @default(uuid())
+  name    String    @unique @db.VarChar(40)
+  Product Product[]
+}
+
+model Cart {
+  id            String   @id @default(uuid())
+  user_id       String
+  product_id    String
+  quantity      Int      @db.UnsignedSmallInt
+  created_at    DateTime @default(now())
+  last_modified DateTime @updatedAt
+  subtotal      Decimal? @default(0.00) @db.Decimal(15, 2)
+  product       Product  @relation(fields: [product_id], references: [id])
+  user          User     @relation(fields: [user_id], references: [id], onDelete: Cascade)
+
+  @@index([product_id], map: "Cart_product_id_fkey")
+  @@index([user_id], map: "Cart_user_id_fkey")
+}

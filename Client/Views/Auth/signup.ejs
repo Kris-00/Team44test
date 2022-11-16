@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../public_partials/_header.ejs') %>
+
+  <body class="bg-surface">
+    <!--start wrapper-->
+    <div class="wrapper">
+      <header id="Loggedin">
+        <%- include('../public_partials/_navbar.ejs') %>
+
+          <%- include('../public_partials/_navLogged.ejs') %>
+
+      </header>
+      <!--start content-->
+      <main class="authentication-content">
+        <div class="container">
+          <div class="mt-4">
+            <div class="card rounded-0 overflow-hidden shadow-none bg-white border">
+              <div class="row g-0">
+                <div class="col-12 order-1 col-xl-8 d-flex justify-content-center border-end">
+                  <img src="/assets/images/alcoholic/alc-01.jpg" class="img-fluid" alt="" />
+                </div>
+                <div class="col-12 col-xl-4 order-xl-2">
+                  <div class="card-body p-4 p-sm-5">
+                    <h5 class="card-title">Sign Up</h5>
+                    <p class="card-text mb-4">
+                      Feel The Drink! Signup to get yours now.
+                    </p>
+                    <span class="form-label text-danger" id="errorMsg">
+                    </span>
+                    <form class="form-body" autocomplete="off">
+                      <div class="row g-3">
+                        <div class="col-12">
+                          <label for="inputName" class="form-label">Name</label>
+                          <div class="ms-auto position-relative">
+                            <div class="position-absolute top-50 translate-middle-y search-icon px-3">
+                              <i class="bi bi-person-circle"></i>
+                            </div>
+                            <input type="text" class="form-control radius-30 ps-5" id="inputName"
+                              placeholder="Enter Name" maxlength="50" autocomplete="off" required />
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <label for="inputEmailAddress" class="form-label">Email Address</label>
+                          <div class="ms-auto position-relative">
+                            <div class="position-absolute top-50 translate-middle-y search-icon px-3">
+                              <i class="bi bi-envelope-fill"></i>
+                            </div>
+                            <input type="email" class="form-control radius-30 ps-5" id="inputEmailAddress"
+                              placeholder="Email" autocomplete="off" required />
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <label for="inputPhoneNumber" class="form-label">Enter Phone Number</label>
+                          <div class="ms-auto position-relative">
+                            <div class="position-absolute top-50 translate-middle-y search-icon px-3">
+                              <i class="bi bi-lock-fill"></i>
+                            </div>
+                            <input type="tel" class="form-control radius-30 ps-5" id="inputPhoneNumber"
+                              placeholder="Phone Number" minlength="8" maxlength="8" autocomplete="off" required />
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <label for="inputPhoneNumber" class="form-label">Enter Password</label>
+                          <div class="ms-auto position-relative">
+                            <div class="position-absolute top-50 translate-middle-y search-icon px-3">
+                              <i class="bi bi-lock-fill"></i>
+                            </div>
+                            <input type="password" class="form-control radius-30 ps-5" id="inputChoosePassword"
+                              placeholder="Password" minlength="8" maxlength="16" autocomplete="off" required />
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <div class="d-grid">
+                            <div id="g-recaptcha" class="g-recaptcha mb-3"
+                              data-sitekey="6LeLgtwiAAAAACDTNgPD4QfUzNwKnwIJWrFVakw5"></div>
+                            <button id="signup" type="button" class="btn btn-primary radius-30">
+                              Sign Up
+                            </button>
+                          </div>
+                        </div>
+                        <div class="col-12 text-center">
+                          <p class="mb-0">
+                            Already have an account?
+                            <a href="/login">Sign in here</a>
+                          </p>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!--end page main-->
+
+      <%- include('../public_partials/_footer.ejs') %>
+    </div>
+    <!--end wrapper-->
+
+    <!-- Bootstrap bundle JS -->
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+
+    <!--plugins-->
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/pace.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script type="module" src="/assets/js/module/auth/register.js"></script>
+  </body>
+
+</html>

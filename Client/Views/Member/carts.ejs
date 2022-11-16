@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../public_partials/_header.ejs') %>
+
+
+    <body class="bg-surface">
+        <!--start wrapper-->
+        <div class="wrapper">
+            <header id="Loggedin">
+                <%- include('../public_partials/_navbar.ejs') %>
+
+                    <%- include('../public_partials/_navLogged.ejs') %>
+
+            </header>
+            <!--start content-->
+            <!-- <main class="page-content" style="padding: 1rem 3rem 5rem 3rem !important; margin: 0 !important;"> -->
+            <main class="member-page-content">
+
+                <div class="card">
+                    <div class="card-header py-3">
+
+                        <!-- Shopping Cart-->
+                        <div class="table-responsive shopping-cart">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Product Name</th>
+                                        <th class="text-center">Quantity</th>
+                                        <th class="text-center">Subtotal</th>
+                                        <th class="text-center">Discount</th>
+                                        <th class="text-center"><button class="btn btn-sm btn-outline-danger"
+                                                id="clearAll">Clear
+                                                Cart</button></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tableBody">
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <span class="d-flex justify-content-center" id="noItem"></span>
+                        <div class="shopping-cart-footer">
+
+                            <div class="column">
+                            </div>
+                            <div class="column text-lg" id="totalAmt">
+                                <h4>Total: <span class="text-medium">$0.00</span></h4>
+                            </div>
+                        </div>
+                        <div class="shopping-cart-footer">
+                            <div class="column"><a class="btn btn-outline-secondary" href="/"><i
+                                        class="icon-arrow-left"></i>&nbsp;Back
+                                    to Shopping</a></div>
+                            <div class="column"><a class="btn btn-success btn-lg" href="/member/payment">Checkout</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </main>
+            <!--end page main-->
+
+            <%- include('../public_partials/_footer.ejs') %>
+
+
+        </div>
+        <!--end wrapper-->
+
+        <!-- Bootstrap bundle JS -->
+        <script src="/assets/js/bootstrap.bundle.min.js"></script>
+
+        <!--plugins-->
+        <script src="/assets/js/jquery.min.js"></script>
+        <script src="/assets/js/pace.min.js"></script>
+        <script type="module" src="/assets/js/module/product/cart.js"></script>
+    </body>
+
+</html>

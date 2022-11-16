@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../public_partials/_header.ejs') %>
+
+
+  <body class="bg-surface">
+    <!--start wrapper-->
+    <div class="wrapper">
+
+      <header id="Loggedin">
+        <%- include('../public_partials/_navbar.ejs') %>
+
+          <%- include('../public_partials/_navLogged.ejs') %>
+
+      </header>
+      <!--start content-->
+      <main class="authentication-content mb-5">
+
+        <div class="card">
+          <div class="card-header py-3">
+            <div class="row g-3 align-items-center"
+              style="padding-left:20rem; padding-right:20rem; padding-bottom: 5rem;">
+              <h4>Customer Care Policy</h2>
+                <p class="fs-6">GetDrunk is committed to providing superb services to our customers. We proactively
+                  strive to provide products and services at the best value and experience.
+                  Our employees have undergone thorough trainings and are committed to providing the best customer
+                  service possible.
+                  We are committed to providing a safe and secure environment for our customers and employees, and any
+                  form of harassment or discrimination will not be tolerated.
+                  Please note that we do not sell alcohol to minors who are under the age of 18 in accordance to the
+                  Liquor Control (Supply and Consumption) Act. We reserve the right to request for proof of age and
+                  identity at any time.</p>
+                <h4>Privacy Policy</h2>
+                  <p class="fs-6">GetDrunk is committed to protecting your privacy in accordance to the Personal Data
+                    and Protection Act. We will not sell, rent, or lease your personal information to third parties.
+                    We will not share your information with third parties for marketing purposes.
+                    We will only use your information to provide the services you have requested.
+                    We may occasionally update this policy and you will be notified about significant changes in the way
+                    we treat personal information by sending a notice to the primary email address specified in your
+                    account or by placing a prominent notice on our site.</p>
+            </div>
+          </div>
+        </div>
+    </div>
+    </div>
+
+    </main>
+    <!--end page main-->
+    <!--end page main-->
+
+    <%- include('../public_partials/_footer.ejs') %>
+
+
+      </div>
+      <!--end wrapper-->
+
+      <!-- Bootstrap bundle JS -->
+      <script src="/assets/js/bootstrap.bundle.min.js"></script>
+
+      <!--plugins-->
+      <script src="/assets/js/jquery.min.js"></script>
+      <script src="/assets/js/pace.min.js"></script>
+      <script type="module" src="/assets/js/module/product/product_general.js"></script>
+  </body>
+
+</html>

@@ -1,0 +1,188 @@
+### GET ALL
+GET http://localhost:3000/products
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ZmYwNGZlNC1lYmE4LTQwNGUtYWIzNy0yNTRhNjQ3OGUzY2EiLCJpYXQiOjE2NjczNjYzNTcsImV4cCI6MTY2NzQ1Mjc1N30.McVjkLgUD5R5WYbPrrY5E18r9LYT_08SjSigcL-HeZs
+### GET BY ID
+GET http://localhost:3000/products/33ee97da-3631-40c0-8974-0f34c240e8da
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2ZmYwNGZlNC1lYmE4LTQwNGUtYWIzNy0yNTRhNjQ3OGUzY2EiLCJpYXQiOjE2NjczNjYzNTcsImV4cCI6MTY2NzQ1Mjc1N30.McVjkLgUD5R5WYbPrrY5E18r9LYT_08SjSigcL-HeZs
+
+###
+GET http://localhost:3000/category
+Content-Type: application/json
+
+
+### CREATE
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+    "name": "whisky",
+    "price": 99,
+    "stock": 45,
+    "description": "I AM A WHISKY",
+    "image_url": "BUYME3",
+    "product_code": "W1",
+    "categoryId": "1d70f256-4663-4165-ae77-154fcc89f1cf"
+}
+
+# {
+#     "name": "champange",
+#     "price": 99,
+#     "stock": 45,
+#     "description": "I AM champange",
+#     "image_url": "BUYME7",
+#     "product_code": "C1"
+# }
+
+### UPDATE
+PATCH http://localhost:3000/products/e8c0bf86-27dd-463b-9427-7ed6c9de7b79
+Content-Type: application/json
+
+{
+    "name": "whisky",
+    "price": 99,
+    "stock": 45,
+    "description": "I am actually an imposter",
+    "image_url": "BUYME3",
+    "product_code": "W1"
+}
+
+### DELETE
+DELETE http://localhost:3000/products/U2FsdGVkX19sISUtQCmRdE7AxrCrLb4eh7H57arcIlHWEjIkWm%2F0hp0wYukcRQAzGqb79lNWg0z7RLVCAQ7RNA%3D%3D
+
+################ FOR USERS
+
+### CREATE NEW USER
+POST http://localhost:3000/register
+Content-Type: application/json
+
+{
+    "full_name": "<Raymond Ching Bon>",
+    "email": "testd@gmail.com",
+    "phone": "65925512",
+    "password": "Pass@123"
+}
+
+### CREATE NEW USER
+POST http://localhost:3000/register
+Content-Type: application/json
+
+{
+    "full_name": "Test<>",
+    "email": "hui612393@hotmail.com",
+    "phone": "96345629",
+    "password": "Pass@1234"
+}
+
+### CREATE NEW USER
+POST http://localhost:3000/register
+Content-Type: application/json
+
+{
+    "full_name": "I am user",
+    "email": "nouser@gmail.com",
+    "phone": "96345629",
+    "password": "useruser"
+}
+
+### LOGIN ACC
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "email": "raymond1.chan@singaporetech.edu.sg",
+    "password": "PAs4297!"
+}
+
+### LOGIN ACC
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "email": "hui61239@hotmail.com",
+    "password": "Pass@1234"
+    
+}
+
+### Verify OTP ACC
+POST http://localhost:3000/verifyOTP
+Content-Type: application/json
+
+
+
+# {
+#   "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJmY2Q4YTI0Yi1hNWFiLTQ5YzMtODY0Yy1iMWI2OGQwOTBhNTIiLCJpYXQiOjE2NjY1NDQxNDEsImV4cCI6MTY2NjU0NDQ0MX0._zfscAEMoUd4vAuZxoPHBCcKlYrYcnOyuz4NtU2lXLs",
+#   "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiZmNkOGEyNGItYTVhYi00OWMzLTg2NGMtYjFiNjhkMDkwYTUyIiwianRpIjoiZjMyZWJiMDgtMTUyZS00N2NmLTkxN2ItNmZkMGIxOTdiYTc4IiwiaWF0IjoxNjY2NTQ0MTQxLCJleHAiOjE2NjY1NDUzNDF9.jEzo2W_buqy96e1WupQJDdf4y1jTakaylJGFdqn2axY"
+# }
+
+###
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "email": "raymond.chan@singaporetech.edu.sg",
+    "password": "123"
+}
+
+###
+POST http://localhost:3000/cart/c4bc6a10-0e2e-4950-8b75-d744b3ea9767
+Content-Type: application/json
+
+{
+
+    "products":[
+        {"product_id": "26c17835-5594-4e8f-a1a6-cce6576fc63c",
+        "quantity": 1
+        },
+        {"product_id": "f764c28a-0b13-4f87-8af1-a622b03c76db",
+        "quantity": 5
+        },
+        {"product_id": "df835013-7593-4970-8a92-a2a2b7771d21",
+        "quantity": 2
+        }
+    ]
+}
+
+###
+GET http://localhost:3000/cart/27fa9774-76a1-48c4-b9c6-1909d1ffee9c
+
+### DELETE
+DELETE http://localhost:3000/cart/27fa9774-76a1-48c4-b9c6-1909d1ffee9c
+
+### GET ALL
+GET http://localhost:3000/cart
+
+###
+GET http://localhost:3000/users
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI4ZDVlM2QxNy1jZjE5LTRhMWItODdiOC00NjcxYjEzYTU1ZjQiLCJpYXQiOjE2Njc0MjAzOTIsImV4cCI6MTY2NzUwNjc5Mn0.lJ5V3feAOX4qftDopW-nAPvzav0E1ZvxSeWODVkJoi4
+
+{
+    "id": "8d5e3d17-cf19-4a1b-87b8-4671b13a55f4",
+    "role": "admin"
+}
+
+###
+POST http://localhost:3000/verifyUserAuth
+Content-Type: application/json
+
+###
+POST http://localhost:3000/carts/193a0a8b-0074-40ee-84e1-650490901d45
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI4ZDVlM2QxNy1jZjE5LTRhMWItODdiOC00NjcxYjEzYTU1ZjQiLCJpYXQiOjE2Njc0MjAzOTIsImV4cCI6MTY2NzUwNjc5Mn0.lJ5V3feAOX4qftDopW-nAPvzav0E1ZvxSeWODVkJoi4
+
+
+###
+DELETE  http://localhost:3000/cart
+Content-Type: application/json
+
+###
+DELETE  http://localhost:3000/cart/f4c92a11-a25f-4613-86f1-83bac7a52c05
+Content-Type: application/json
+
+###
+GET   http://localhost:3000/cart/checkout/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDk0NDZiZC1jZjQzLTQxYTgtOWMyNS1kMDAxMGE0NTkwOTIiLCJpYXQiOjE2Njc2Mzk1NzIsImV4cCI6MTY2NzY0MDE3Mn0.R6mdJUp_MM7eGNsidz5f7toYJNjMQSCN_uVNKX3LdsI
+
+###
+Post   http://localhost:3000/revokeRefreshTokens/

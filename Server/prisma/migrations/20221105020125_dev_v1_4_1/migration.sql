@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE `Cart` ADD COLUMN `subtotal` DECIMAL(15, 2) NULL DEFAULT 0.00;

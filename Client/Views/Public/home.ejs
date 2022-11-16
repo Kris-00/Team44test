@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../public_partials/_header.ejs') %>
+
+
+  <body class="bg-surface">
+    <!--start wrapper-->
+    <div class="wrapper">
+      <header id="Loggedin">
+        <%- include('../public_partials/_navbar.ejs') %>
+
+          <%- include('../public_partials/_navLogged.ejs') %>
+
+      </header>
+      <!--start content-->
+      <main class="authentication-content mb-5">
+
+        <div class="card">
+          <div class="card-header py-3">
+            <div class="row g-3 align-items-center">
+              <div class="col-lg-3 col-md-6 me-auto">
+                <div class="ms-auto position-relative">
+                  <div class="position-absolute top-50 translate-middle-y search-icon px-3">
+                    <i class="bi bi-search"></i>
+                  </div>
+                  <input class="form-control ps-5" type="text" placeholder="search produts" />
+                </div>
+              </div>
+              <div class="col-lg-2 col-6 col-md-3">
+                <select class="form-select">
+                  <option>All category</option>
+                  <option>Gin</option>
+                  <option>Tequila</option>
+                  <option>Vodka</option>
+                  <option>Whisky</option>
+                </select>
+              </div>
+              <div class="col-lg-2 col-6 col-md-3">
+                <select class="form-select">
+                  <option>Latest added</option>
+                  <option>Cheap first</option>
+                  <option>Most viewed</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="product-grid">
+              <div class="row row-cols-1 row-cols-lg-4 row-cols-xl-4 row-cols-xxl-5 g-3" id="item"></div>
+              <!--end row-->
+            </div>
+            <nav class="float-end mt-4" aria-label="Page navigation">
+              <ul class="pagination">
+                <li class="page-item disabled">
+                  <a class="page-link" href="#">Previous</a>
+                </li>
+                <li class="page-item active">
+                  <a class="page-link" href="#">1</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#">Next</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </main>
+      <!--end page main-->
+      <!--end page main-->
+
+      <%- include('../public_partials/_footer.ejs') %>
+
+
+    </div>
+    <!--end wrapper-->
+
+    <!-- Bootstrap bundle JS -->
+    <script src="/assets/js/bootstrap.bundle.min.js"></script>
+
+    <!--plugins-->
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/pace.min.js"></script>
+    <script type="module" src="/assets/js/module/product/product_general.js"></script>
+  </body>
+
+</html>

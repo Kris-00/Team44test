@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../public_partials/_header.ejs') %>
+
+
+  <body class="bg-surface">
+    <!--start wrapper-->
+    <div class="wrapper">
+
+      <header id="Loggedin">
+        <%- include('../public_partials/_navbar.ejs') %>
+
+          <%- include('../public_partials/_navLogged.ejs') %>
+
+      </header>
+      <!--start content-->
+      <main class="authentication-content mb-5">
+
+        <div class="card">
+          <div class="card-header py-3">
+            <div class="row g-3 align-items-center"
+              style="padding-left:20rem; padding-right:20rem; padding-bottom: 5rem;">
+              <h4>Let us have some good time</h2>
+                <p class="fs-6">If you have any questions about anything related to GetDrunk, you may contact us via
+                  telegram @getdrunk and we will get back to you the soonest we can!</p>
+                <h4>If you wanna talk business</h2>
+                  <p class="fs-6">If you would like to apply to be a supplier or would like to get a formal business
+                    quotation for your events, please contact us via getdrunk@gmail.com instead
+                    and we will get back to you as soon as we can!</p>
+                  <h4>Receiving your drunk kit</h2>
+                    <p class="fs-6">We will deliver your drunk kit to your doorstep within 3-5 working days. If you have
+                      any questions regarding the delivery, you may contact us via email at
+                      deliveringdrunks@gmail.com.</p>
+                    <blockquote><em>
+                        Disclaimer: Please consume alcohol responsibly and do not drink and drive. We reserve the right
+                        to refuse service to anyone who is deemed to be deeply intoxicated or anyone who is deemed to be
+                        a nuisance to other customers or our employees.
+                        Our employees are trained to detect signs of intoxication and distress. Please inform your
+                        guests that in the event that they are are unwell or uncomfortable at any point, they may get
+                        any of our friendly employees' attention by wearing a red lightstick and they will assist them
+                        to make arrangements to get home safely.
+                        Alternatively, you may opt for GetDrunk's bus chauffeur service (partnership) for events at a
+                        discounted rate. Your safely is our concern, and we will do our best to ensure that you have a
+                        good time as well as return home safely.
+                      </em></blockquote>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    </main>
+    <!--end page main-->
+    <!--end page main-->
+
+    <%- include('../public_partials/_footer.ejs') %>
+
+
+      </div>
+      <!--end wrapper-->
+
+      <!-- Bootstrap bundle JS -->
+      <script src="/assets/js/bootstrap.bundle.min.js"></script>
+
+      <!--plugins-->
+      <script src="/assets/js/jquery.min.js"></script>
+      <script src="/assets/js/pace.min.js"></script>
+      <script type="module" src="/assets/js/module/product/product_general.js"></script>
+  </body>
+
+</html>
